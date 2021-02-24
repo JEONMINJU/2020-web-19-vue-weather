@@ -1,32 +1,54 @@
-<template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+<template lang="pug">
+	#app.container 
+		Header
+		transition(name="fade" mode="out-in")
+			router-view.wrapper-view 
+		Footer 
 </template>
+<script>
+import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
 
+export default {
+	name: 'App',
+	components: {
+		Header,
+		Footer
+	}
+}
+
+</script>
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+	@include flex($SB, $ST);
+	flex-direction: column;
+	padding: 0;
+	height: 100vh;
+
+	.wrapper-view {
+		border-left: 1px solid $colorLight;
+		border-right: 1px solid $colorLight;
+		flex-grow: 1;
+		overflow-y: auto;
+		@include mobile {
+			border-left: none;
+			border-right: none;
+		}
+	}
+
+	.fade-enter {
+		opacity: 0;
+	}
+	.fade-enter-active {
+		transition: opacity 0.35s ease;
+	}
+	.fade-leave {
+
+	}
+	.fade-leave-active {
+		transition: opacity 0.15s ease;
+		opacity: 0;
+	}
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 </style>
