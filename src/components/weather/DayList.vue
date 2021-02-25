@@ -4,7 +4,6 @@
 </template>
 <script>
 import Day from './Day.vue'
-
 export default {
 	name: 'DayList',
 	props: ['value'],
@@ -13,7 +12,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 	.day-list {
-		overflow-y: auto;
+		overflow-y: scroll;
 		@include flex($FS, $ST);
 		flex-wrap: wrap;
 	}

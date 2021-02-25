@@ -2,21 +2,21 @@
 	.days-wrapper
 		.title-wrapper
 			Title.title(:value="title")
-			Search.search(:value="value" :selCity="GET_CITY")
-		DayList.day-list(:value="GET_DAYS")
+			Search.search(:action="`ACT_DAYS`" :selCity="GET_CITY")
+		transition(name="slide-fade" mode="out-in")
+			DayList.day-list(:value="GET_DAYS" :key="tKey")
 </template>
 <script>
 import { mapGetters } from 'vuex'
 import Search from '../components/Search.vue'
 import DayList from '../components/weather/DayList.vue'
 import Title from '../components/weather/Title.vue'
-
 export default {
 	name: 'Days',
 	components: { DayList, Title, Search },
 	data() {
 		return {
-			value: 'ACT_DAYS'
+			tKey: '',
 		}
 	},
 	computed: {
@@ -29,6 +29,11 @@ export default {
 			)
 		},
 	},
+	watch: {
+		GET_DAYS: function(nv){
+			if(nv) this.tKey = nv.city.name
+		}
+	}
 }
 </script>
 <style lang="scss" scoped>

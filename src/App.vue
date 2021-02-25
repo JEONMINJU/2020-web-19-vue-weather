@@ -8,7 +8,6 @@
 <script>
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
-
 export default {
 	name: 'App',
 	components: {
@@ -16,7 +15,6 @@ export default {
 		Footer
 	}
 }
-
 </script>
 <style lang="scss">
 #app {
@@ -24,31 +22,15 @@ export default {
 	flex-direction: column;
 	padding: 0;
 	height: 100vh;
-
 	.wrapper-view {
 		border-left: 1px solid $colorLight;
 		border-right: 1px solid $colorLight;
 		flex-grow: 1;
-		overflow-y: auto;
+		overflow-y: hidden;
 		@include mobile {
 			border-left: none;
 			border-right: none;
 		}
 	}
-
-	.fade-enter {
-		opacity: 0;
-	}
-	.fade-enter-active {
-		transition: opacity 0.35s ease;
-	}
-	.fade-leave {
-
-	}
-	.fade-leave-active {
-		transition: opacity 0.15s ease;
-		opacity: 0;
-	}
 }
-
 </style>

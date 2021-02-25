@@ -4,10 +4,9 @@
 </template>
 <script>
 import axios from 'axios'
-
 export default {
 	name: 'Search',
-	props: ['value', 'selCity'],
+	props: ['action', 'selCity'],
 	async created() {
 		const r = await axios.get('/json/city.json')
 		this.city = r.data.map((v) => {
@@ -20,7 +19,7 @@ export default {
 	},
 	watch: {
 		selected: function(nv) {
-			this.$store.dispatch(this.value, nv)
+			this.$store.dispatch(this.action, nv)
 		}
 	},
 	data() {
@@ -32,5 +31,4 @@ export default {
 }
 </script>
 <style lang="scss">
-
 </style>
