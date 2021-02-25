@@ -14,9 +14,7 @@ import Temp from './Temp.vue'
 import Icon from './Icon.vue'
 import Summary from './Summary.vue'
 import Wind from './Wind.vue'
-
 import moment from 'moment'
-
 export default {
 	name: 'Day',
 	props: ['value'],
@@ -94,7 +92,6 @@ export default {
 		@include tablet {
 			width: 98%;
 		}
-
 		.icon {
 			margin-right: 1em;
 			@include mobile {
