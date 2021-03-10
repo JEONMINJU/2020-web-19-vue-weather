@@ -1,7 +1,8 @@
 <template lang="pug">
 	.home-wrapper
-		.title-wrapper
-			h2 Vue를 활용한 날씨정보
+		.logo
+			i.fa.fa-check
+			sapn.title UE를 활용한 날씨정보	
 				//-small.ml-3 v1.0
 		Search.Search(:action="`ACT_DAILY`")
 		transition(name="slide-fade" mode="out-in")
@@ -38,6 +39,10 @@ export default {
 	text-align: center;
 	//@include flex($CT, $CT);
 	//flex-direction: column;
+		.logo{
+			font-size: 2em;
+			padding: 1em 0 0.5em 0;
+		}
 	.Search {
 		width: 200px;
 		margin: 2em auto;

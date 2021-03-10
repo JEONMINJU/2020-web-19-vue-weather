@@ -1,5 +1,5 @@
 <template lang="pug">
-	footer.footer-wrapper Copyright &copy;booldook. Allright Reserved.
+	footer.footer-wrapper 2021 Copyright &copy;jmju. Allright Reserved.
 </template>
 <script>
 export default {
@@ -10,7 +10,7 @@ export default {
 .footer-wrapper {
 	text-align: center;
 	padding: 1em;
-	background-color: $colorDarker;
-	color: $colorLighter;
+	background-color: #f69d3c;
+	color: #f9f9f9;
 }
 </style>

@@ -25,13 +25,14 @@ export default {
 	padding: 0;
 	height: 100vh;
 	.wrapper-view {
-		border-left: 1px solid $colorLight;
-		border-right: 1px solid $colorLight;
+/* 		border-left: 1px solid $colorLight;
+		border-right: 1px solid $colorLight; */
+		background: linear-gradient(#3f87a6, #ebf8e1, #ffba70);
 		flex-grow: 1;
 		overflow-y: auto;
 		@include mobile {
-			border-left: none;
-			border-right: none;
+/* 			border-left: none;
+			border-right: none; */
 		}
 	}
 }

@@ -1,7 +1,7 @@
 <template lang="pug">
 	header.header-wrapper
 		.logo
-			i.fa.fa-sun
+			i.fa.fa-map-marker-alt
 			router-link(to='/') DAILY
 		ul.navi-wrapper
 			li.navi
@@ -14,8 +14,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .header-wrapper {
-	color: $colorLighter;
-	background-color: $colorDarker;
+	color: #ffffff;
+	background-color: #3f87a6;
 	@include flex($FS, $CT);
 	.logo {
 		@include flex($FS, $CT);

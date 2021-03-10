@@ -22,12 +22,12 @@ export default {
 	name: 'Daily',
 	components: { Title, Time, Temp, Icon, Summary, Wind },
 	computed: { 
-		...mapGetters(['GET_DAILY']),
+		...mapGetters(['GET_DAILY']), //GET_DAILY 가 computed 변수가 되었다.
 		title: function() {
 			return (
 				this.GET_DAILY
-				? { name: this.GET_DAILY.name, country: this.GET_DAILY.sys.country }
-				: { name: '', country: '' }
+				? { name: this.GET_DAILY.name, country: this.GET_DAILY.sys.country }//name에 this.GET_DAILY.name을 담고 country에 this.GET_DAILY.sys.country를 담고 
+				: { name: '', country: '' }//그게 아니면 빈값!!!
 			)
 		},
 		time: function() {
@@ -35,7 +35,7 @@ export default {
 				this.GET_DAILY
 				? moment(this.GET_DAILY.dt * 1000).format('M월 D일 HH시 m분 기준')
 				: ''
-			)
+			)// 타임 가져오기
 		},
 		icon: function() {
 			return (
